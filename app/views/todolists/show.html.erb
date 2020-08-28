@@ -1,0 +1,9 @@
+<h2>タイトル</h2>
+<p><%= @lists.title %></p>
+<h2>本文</h2>
+<p><%=@lists.body %></p>
+<h2>画像</h2>
+<%= attachment_image_tag @list, :image, format: 'jpeg', size: "300x300" %>
+
+<%= link_to "編集", edit_todolist_path(@lists.id) %> 
+<%= link_to "削除", destroy_todolist_path(@lists.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
